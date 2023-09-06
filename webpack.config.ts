@@ -8,9 +8,11 @@ import CopyPlugin from 'copy-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
-const devServer: DevServerConfiguration = {
-  compress: true,
-  port: 8080,
+const devServer: (port: DevServerConfiguration['port']) => DevServerConfiguration = (port) => {
+  return {
+    compress: true,
+    port,
+  };
 };
 
 const createBrowserConfig = (type: 'dashboard' | 'graphics', name: string): Configuration => ({
@@ -59,13 +61,19 @@ const createBrowserConfig = (type: 'dashboard' | 'graphics', name: string): Conf
     new VanillaExtractPlugin(),
     new MiniCssExtractPlugin(),
     new CopyPlugin({
-      patterns: [{ from: resolve(__dirname, 'src', type, name, 'fonts'), to: resolve(__dirname, type, 'fonts') }],
+      patterns: [{ from: resolve(__dirname, 'fonts'), to: resolve(__dirname, type, 'fonts') }],
     }),
   ],
   externals: ['nodecg'],
   devtool: NODE_ENV === 'development' ? 'inline-source-map' : void 0,
-  devServer,
 });
 
-const config: Configuration[] = [createBrowserConfig('graphics', 'opening')];
+const config: Configuration[] = [createBrowserConfig('graphics', 'opening'), createBrowserConfig('graphics', 'lt')].map(
+  (config, index) => {
+    return {
+      ...config,
+      devServer: devServer(8080 + index),
+    };
+  },
+);
 export default config;
