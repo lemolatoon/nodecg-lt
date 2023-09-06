@@ -4,6 +4,7 @@ import type { Configuration as DevServerConfiguration } from 'webpack-dev-server
 import type { Configuration } from 'webpack';
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
@@ -57,6 +58,9 @@ const createBrowserConfig = (type: 'dashboard' | 'graphics', name: string): Conf
     }),
     new VanillaExtractPlugin(),
     new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: resolve(__dirname, 'src', type, name, 'fonts'), to: resolve(__dirname, type, 'fonts') }],
+    }),
   ],
   externals: ['nodecg'],
   devtool: NODE_ENV === 'development' ? 'inline-source-map' : void 0,
