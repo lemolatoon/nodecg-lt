@@ -1,0 +1,45 @@
+{
+  "name": "nodecg-lt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemolatoon/nodecg-lt.git"
+  },
+  "author": "lemolatoon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemolatoon/nodecg-lt/issues"
+  },
+  "homepage": "https://github.com/lemolatoon/nodecg-lt#readme",
+  "engines": {
+    "node": "18.14.0"
+  },
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "graphics": [
+      {
+        "file": "opening.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
