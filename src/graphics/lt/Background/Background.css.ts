@@ -10,5 +10,7 @@ export const background = style({
 
 export const canvas = style({
   position: 'absolute',
-  zIndex: 999,
+  zIndex: -1,
+
+  filter: 'saturate(1.5)',
 });

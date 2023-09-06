@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { background, canvas } from './Background.css';
 
-export const Background = () => {
+type Props = {
+  verticalRatio: number;
+  horizontalRatio: number;
+};
+export const Background = ({ verticalRatio, horizontalRatio }: Props) => {
   const ref = React.useRef<HTMLCanvasElement>(null);
   const imgRef = React.useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = React.useState(false);
@@ -22,7 +26,7 @@ export const Background = () => {
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
         // Clear the reactangle for displaying lt itself
-        ctx.clearRect(canvas.width / 5, 0, canvas.width, (canvas.height * 4) / 5);
+        ctx.clearRect(canvas.width * verticalRatio, 0, canvas.width, canvas.height * horizontalRatio);
       }
     }
   }, [ref.current, loaded]);
