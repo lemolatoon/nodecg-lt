@@ -38,14 +38,18 @@ const InfoLayout = ({ className, infos }: InfoLayoutProps) => {
       <div />
       <div className={headerFont}>Title</div>
       <div>
-        {infos.map(({ speaker }) => (
-          <div className={font}>{speaker}</div>
+        {infos.map(({ speaker }, index) => (
+          <div key={index} className={font}>
+            {speaker}
+          </div>
         ))}
       </div>
       <div className={bar} />
       <div>
-        {infos.map(({ title }) => (
-          <div className={font}>{title}</div>
+        {infos.map(({ title }, index) => (
+          <div key={index} className={font}>
+            {title}
+          </div>
         ))}
       </div>
     </div>
