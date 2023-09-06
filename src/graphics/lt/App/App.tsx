@@ -4,7 +4,7 @@ import { Background } from '../Background';
 export const App = () => {
   return (
     <>
-        <Background />
+      <Background />
       <h1>App2</h1>
     </>
   );
