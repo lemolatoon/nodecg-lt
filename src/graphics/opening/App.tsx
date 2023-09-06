@@ -2,7 +2,7 @@ import React from 'react';
 import { background, info, song, title, wrapper } from './App.css';
 import backgroundImg from './assets/background.png';
 import { Info } from './Info';
-import { Song } from '../../../Song';
+import { Song } from './Song';
 
 export const App = () => {
   return (
