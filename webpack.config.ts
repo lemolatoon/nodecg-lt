@@ -51,7 +51,9 @@ const createBrowserConfig = (type: 'dashboard' | 'graphics', name: string): Conf
       filename: `${name}.html`,
     }),
     new VanillaExtractPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: `${name}.css`,
+    }),
     new CopyPlugin({
       patterns: [
         { from: resolve(__dirname, 'fonts'), to: resolve(__dirname, type, 'fonts') },
