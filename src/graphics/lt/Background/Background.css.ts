@@ -14,3 +14,7 @@ export const canvas = style({
 
   filter: 'saturate(1.5)',
 });
+
+export const filterImg = {
+  filter: 'saturate(0.5) brightness(0.5)',
+};

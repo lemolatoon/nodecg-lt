@@ -1,4 +1,5 @@
 import React from 'react';
+import { wrapper } from './BottomBox.css';
 
 type Props = {
   horizontalRatio: number;
@@ -11,5 +12,9 @@ export const BottomBox = ({ horizontalRatio }: Props) => {
     width: '100%',
     height: `${100 - horizontalRatio * 100}%`,
   } as const;
-  return <div style={style}>BottomBox</div>;
+  return (
+    <div style={style} className={wrapper}>
+      BottomBox
+    </div>
+  );
 };
