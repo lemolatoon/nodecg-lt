@@ -1,35 +1,23 @@
 import React from 'react';
 import { bar, font, headerFont, wrapper } from './Info.css';
+import { MemberInfo } from '../../../types';
+import { useReplicant } from 'use-nodecg';
 
 type Props = {
   className?: string;
 };
 export const Info = ({ className }: Props) => {
-  const dummyInfos: Info[] = [
-    {
-      speaker: 'lemolatoon',
-      title: 'ミリしらgolangでdiscord botを作ってみた話',
-    },
-    {
-      speaker: 'BastelColor',
-      title: '「かわいい」について',
-    },
-    {
-      speaker: 'Hara.S',
-      title: '組み込みシステムにおけるデバッグと動作検証',
-    },
-  ];
-  return <InfoLayout className={className} infos={dummyInfos} />;
-};
+  const [membersInfos] = useReplicant<MemberInfo[]>('members', []);
+  const [memberIndex] = useReplicant<number>('memberIndex', 0);
 
-export type Info = {
-  speaker: string;
-  title: string;
+  const nextThreeMemberInfos = membersInfos.slice(memberIndex, memberIndex + 3);
+
+  return <InfoLayout className={className} infos={nextThreeMemberInfos} />;
 };
 
 type InfoLayoutProps = {
   className?: string;
-  infos: Info[];
+  infos: MemberInfo[];
 };
 const InfoLayout = ({ className, infos }: InfoLayoutProps) => {
   return (
