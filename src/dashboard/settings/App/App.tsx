@@ -1,9 +1,11 @@
 import React from 'react';
+import { Table } from '../Table';
 
 export const App = () => {
   return (
     <>
-      <h1>App</h1>
+      <h1>管理画面だよ！</h1>
+      <Table />
     </>
   );
 };

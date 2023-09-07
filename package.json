@@ -24,6 +24,15 @@
   },
   "nodecg": {
     "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "settings",
+        "title": "Settings",
+        "width": 2,
+        "file": "settings.html",
+        "headerColor": "#525F78"
+      }
+    ],
     "graphics": [
       {
         "file": "opening.html",
@@ -38,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@types/encoding-japanese": "^2.0.1",
     "@vanilla-extract/css": "^1.13.0",
     "@vanilla-extract/webpack-plugin": "^2.3.0",
     "copy-webpack-plugin": "^11.0.0",
@@ -55,8 +65,12 @@
   "dependencies": {
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "csv-parse": "^5.5.0",
+    "encoding-japanese": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-fast-marquee": "^1.6.0"
+    "react-fast-marquee": "^1.6.0",
+    "react-hook-form": "^7.46.1",
+    "use-nodecg": "0.4.1-2"
   }
 }
