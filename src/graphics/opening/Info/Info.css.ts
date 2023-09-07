@@ -6,7 +6,7 @@ export const wrapper = style({
   paddingBottom: '8px',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   display: 'grid',
-  gridTemplateColumns: '1fr 40px 4fr',
+  gridTemplateColumns: '30% 40px 4fr',
 });
 
 const fontCommon = {

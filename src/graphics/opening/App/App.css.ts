@@ -20,6 +20,7 @@ export const background = style({
 export const wrapper = style({
   display: 'flex',
   height: '100vh',
+  width: '100vw',
   flexDirection: 'column',
   alignItems: 'center',
 });
@@ -32,6 +33,7 @@ export const title = style({
 
 export const info = style({
   alignSelf: 'flex-start',
+  width: '75%',
 });
 
 export const song = style({
