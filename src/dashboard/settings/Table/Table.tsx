@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useReplicant } from 'use-nodecg';
-import { tableWrapper } from './Table.css';
+import { buttonReset, extendWidth, selected, tableRow, tableWrapper } from './Table.css';
 import Encoding from 'encoding-japanese';
 import { parse } from 'csv-parse/browser/esm/sync';
 
@@ -13,11 +13,8 @@ type MemberInfo = {
   title: string;
 };
 export const Table = () => {
-  const dummy = {
-    speaker: 'lemolatoon',
-    title: 'ミリしらgolangでdiscord botを作ってみた話',
-  };
-  const [memberInfos, setMemberInfos] = useReplicant<MemberInfo[]>('members', [dummy], { defaultValue: [dummy] });
+  const [memberInfos, setMemberInfos] = useReplicant<MemberInfo[]>('members', [], { defaultValue: [] });
+  const [memberIndex, setMemberIndex] = useReplicant<number>('memberIndex', 0, { defaultValue: 0 });
   const form = useForm<FormInput>();
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     if (!data.members) return;
@@ -42,7 +39,13 @@ export const Table = () => {
   };
   return (
     <>
-      <TableLayout form={form} onSubmit={onSubmit} memberInfos={memberInfos} />
+      <TableLayout
+        form={form}
+        onSubmit={onSubmit}
+        memberInfos={memberInfos}
+        memberIndex={memberIndex}
+        onClickMember={setMemberIndex}
+      />
     </>
   );
 };
@@ -51,8 +54,10 @@ type TableLayoutProps = {
   form: ReturnType<typeof useForm<FormInput>>;
   onSubmit: SubmitHandler<FormInput>;
   memberInfos?: MemberInfo[];
+  memberIndex: number;
+  onClickMember: (index: number) => void;
 };
-const TableLayout = ({ form, onSubmit, memberInfos }: TableLayoutProps) => {
+const TableLayout = ({ form, onSubmit, memberInfos, memberIndex, onClickMember }: TableLayoutProps) => {
   const {
     register,
     handleSubmit,
@@ -66,9 +71,13 @@ const TableLayout = ({ form, onSubmit, memberInfos }: TableLayoutProps) => {
         {memberInfos ? (
           <ul className={tableWrapper}>
             {memberInfos.map((memberInfo, index) => (
-              <li key={index}>
-                <div>{memberInfo.speaker}</div>
-                <div>{memberInfo.title}</div>
+              <li key={index} className={extendWidth}>
+                <button className={`${buttonReset} ${extendWidth}`} onClick={() => onClickMember(index)}>
+                  <div className={index == memberIndex ? `${tableRow} ${selected}` : tableRow}>
+                    <div>{memberInfo.speaker}</div>
+                    <div>{memberInfo.title}</div>
+                  </div>
+                </button>
               </li>
             ))}
           </ul>
