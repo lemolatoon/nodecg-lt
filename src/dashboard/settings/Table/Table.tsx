@@ -4,13 +4,10 @@ import { useReplicant } from 'use-nodecg';
 import { buttonReset, extendWidth, selected, tableRow, tableWrapper } from './Table.css';
 import Encoding from 'encoding-japanese';
 import { parse } from 'csv-parse/browser/esm/sync';
+import { MemberInfo } from '../../../types';
 
 type FormInput = {
   members: File[];
-};
-type MemberInfo = {
-  speaker: string;
-  title: string;
 };
 export const Table = () => {
   const [memberInfos, setMemberInfos] = useReplicant<MemberInfo[]>('members', [], { defaultValue: [] });

@@ -1,12 +1,15 @@
 import React from 'react';
 import { bar, mainText, textHeader, textsWrapper, wrapper } from './BottomBox.css';
+import { useReplicant } from 'use-nodecg';
+import { MemberInfo } from '../../../types';
 
 type Props = {
   horizontalRatio: number;
 };
 export const BottomBox = ({ horizontalRatio }: Props) => {
-  const dummySpeaker = 'lemolatoon';
-  const dummyTitle = 'ミリしらgolangでdiscord botを作ってみた話';
+  const [membersInfos] = useReplicant<MemberInfo[]>('members', []);
+  const [memberIndex] = useReplicant<number>('memberIndex', 0);
+  const memberInfo = membersInfos[memberIndex];
 
   const style = {
     position: 'absolute',
@@ -17,16 +20,17 @@ export const BottomBox = ({ horizontalRatio }: Props) => {
   } as const;
   return (
     <div style={style}>
-      <BottomBoxLayout speaker={dummySpeaker} title={dummyTitle} />
+      <BottomBoxLayout memberInfo={memberInfo} />
     </div>
   );
 };
 
 type BottomBoxLayoutProps = {
-  speaker: string;
-  title: string;
+  memberInfo?: MemberInfo;
 };
-const BottomBoxLayout = ({ speaker, title }: BottomBoxLayoutProps) => {
+const BottomBoxLayout = ({ memberInfo }: BottomBoxLayoutProps) => {
+  const speaker = memberInfo?.speaker ?? '';
+  const title = memberInfo?.title ?? '';
   return (
     <div className={wrapper}>
       <div className={textsWrapper}>
