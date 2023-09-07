@@ -6,7 +6,7 @@ export const wrapper = style({
 });
 
 const gothic16 = fontFace({
-  src: 'url("../fonts/DotGothic16/DotGothic16-Regular.ttf") format("truetype")',
+  src: 'url("./fonts/DotGothic16/DotGothic16-Regular.ttf") format("truetype")',
 });
 
 export const songName = style({
