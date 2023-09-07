@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "yarn webpack serve",
+    "watch": "yarn webpack watch",
+    "build": "yarn webpack build",
     "fmt:nowrite": "yarn prettier '**/*.{json,ts,tsx}'",
     "fmt": "yarn fmt:nowrite --write"
   },
