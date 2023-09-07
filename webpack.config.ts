@@ -65,12 +65,14 @@ const createBrowserConfig = (type: 'dashboard' | 'graphics', name: string): Conf
   devtool: NODE_ENV === 'development' ? 'inline-source-map' : void 0,
 });
 
-const config: Configuration[] = [createBrowserConfig('graphics', 'opening'), createBrowserConfig('graphics', 'lt')].map(
-  (config, index) => {
-    return {
-      ...config,
-      devServer: devServer(8080 + index),
-    };
-  },
-);
+const config: Configuration[] = [
+  createBrowserConfig('graphics', 'opening'),
+  createBrowserConfig('graphics', 'lt'),
+  createBrowserConfig('dashboard', 'settings'),
+].map((config, index) => {
+  return {
+    ...config,
+    devServer: devServer(8080 + index),
+  };
+});
 export default config;
