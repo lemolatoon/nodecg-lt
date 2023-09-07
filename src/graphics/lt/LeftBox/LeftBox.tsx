@@ -11,5 +11,5 @@ export const LeftBox = ({ verticalRatio }: Props) => {
     width: `${verticalRatio * 100}%`,
     height: '100%',
   } as const;
-  return <div style={style}>LeftBox</div>;
+  return <div style={style}></div>;
 };
