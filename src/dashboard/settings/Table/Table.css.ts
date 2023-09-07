@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const tableWrapper = style({
+  marginTop: '32px',
   border: '1px solid #e0e0e0',
 });
 
