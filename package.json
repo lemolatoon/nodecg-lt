@@ -30,7 +30,7 @@
       {
         "name": "settings",
         "title": "Settings",
-        "width": 2,
+        "width": 100,
         "file": "settings.html",
         "headerColor": "#525F78"
       }

@@ -9,9 +9,10 @@ export const wrapper = style({
   gridTemplateColumns: '30% 40px 4fr',
 });
 
-const fontCommon = {
+const fontCommon: Parameters<typeof style>[0] = {
   fontWeight: 'bold',
   color: 'white',
+  whiteSpace: 'nowrap',
 };
 
 export const font = style({
