@@ -88,6 +88,7 @@
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.0",
     "react-hook-form": "^7.46.1",
+    "string-width": "^6.1.0",
     "use-nodecg": "0.4.1-2"
   },
   "resolutions": {

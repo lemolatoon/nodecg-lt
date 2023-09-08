@@ -6,18 +6,28 @@ export const wrapper = style({
   paddingBottom: '8px',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   display: 'grid',
-  gridTemplateColumns: '30% 40px 4fr',
+  gridTemplateColumns: '30% 40px calc(100% - 30% - 40px)',
+  overflow: 'hidden',
 });
 
 const fontCommon: Parameters<typeof style>[0] = {
   fontWeight: 'bold',
   color: 'white',
-  whiteSpace: 'nowrap',
+  marginRight: '8px',
+  verticalAlign: 'middle',
 };
+
+export const row = style({
+  marginTop: '64px',
+  height: '125px',
+});
+
+export const overflowHidden = style({
+  overflow: 'hidden',
+});
 
 export const font = style({
   ...fontCommon,
-  marginTop: '32px',
   fontSize: '55px',
 });
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import { bar, font, headerFont, wrapper } from './Info.css';
+import { bar, font, headerFont, overflowHidden, row, wrapper } from './Info.css';
 import { MemberInfo } from '../../../types';
 import { useReplicant } from 'use-nodecg';
+import { AutoResizeText } from '../../../components/AutoResizeText';
 
 type Props = {
   className?: string;
@@ -19,6 +20,8 @@ type InfoLayoutProps = {
   className?: string;
   infos: MemberInfo[];
 };
+const rowHeight = '125px';
+// const rowHeight = 'auto';
 const InfoLayout = ({ className, infos }: InfoLayoutProps) => {
   return (
     <div className={`${wrapper} ${className}`}>
@@ -27,16 +30,16 @@ const InfoLayout = ({ className, infos }: InfoLayoutProps) => {
       <div className={headerFont}>Title</div>
       <div>
         {infos.map(({ speaker }, index) => (
-          <div key={index} className={font}>
-            {speaker}
+          <div key={index} className={row}>
+            <AutoResizeText className={font} text={speaker} />
           </div>
         ))}
       </div>
       <div className={bar} />
       <div>
         {infos.map(({ title }, index) => (
-          <div key={index} className={font}>
-            {title}
+          <div key={index} className={row}>
+            <AutoResizeText className={font} text={title} />
           </div>
         ))}
       </div>
