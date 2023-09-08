@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { ComponentPropsWithoutRef, useEffect } from 'react';
 import { nowrap } from './AutoResizeText.css';
 
 type Props = {
   className?: string;
   text: string;
+  style?: React.CSSProperties;
 };
-export const AutoResizeText = ({ className, text }: Props) => {
+export const AutoResizeText = ({ className, text, style }: Props) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const elm = ref.current;
   useEffect(() => {
@@ -19,7 +20,7 @@ export const AutoResizeText = ({ className, text }: Props) => {
     }
   }, [text, elm]);
   return (
-    <div ref={ref} className={`${className} ${nowrap}`}>
+    <div style={style} ref={ref} className={`${className} ${nowrap}`}>
       {text}
     </div>
   );
