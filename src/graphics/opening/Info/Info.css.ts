@@ -17,8 +17,9 @@ const fontCommon: Parameters<typeof style>[0] = {
 };
 
 export const row = style({
-  marginTop: '64px',
   height: '125px',
+
+  display: 'grid',
 });
 
 export const overflowHidden = style({
@@ -28,7 +29,10 @@ export const overflowHidden = style({
 export const font = style({
   ...fontCommon,
   fontSize: '55px',
-  lineHeight: 0,
+  lineHeight: 'calc(55px * 1.5)',
+
+  marginTop: 'auto',
+  marginBottom: 'auto',
 });
 
 export const headerFont = style({

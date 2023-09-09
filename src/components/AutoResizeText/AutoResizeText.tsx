@@ -14,14 +14,7 @@ export const AutoResizeText = ({ className, text, style }: Props) => {
     const elm = ref.current;
     if (!elm || width == 0) return;
 
-    console.log({
-      elm,
-      width,
-      scrollWidth: elm.scrollWidth,
-      clientWidth: elm.clientWidth,
-    });
     const fontSize = `min(${(width / stringWidth(text)) * 2 - 2}px, 55px)`;
-    console.log({ fontSize });
     elm.style.fontSize = fontSize;
   }, [ref.current, text, width]);
 
