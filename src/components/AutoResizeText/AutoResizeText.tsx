@@ -10,8 +10,8 @@ type Props = {
 export const AutoResizeText = ({ className, text, style }: Props) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const [width, setWidth] = React.useState(0);
-  const elm = ref.current;
   useEffect(() => {
+    const elm = ref.current;
     if (!elm || width == 0) return;
 
     console.log({
@@ -23,15 +23,16 @@ export const AutoResizeText = ({ className, text, style }: Props) => {
     const fontSize = `min(${(width / stringWidth(text)) * 2 - 2}px, 55px)`;
     console.log({ fontSize });
     elm.style.fontSize = fontSize;
-  }, [text, width]);
+  }, [ref.current, text, width]);
 
   useLayoutEffect(() => {
+    const elm = ref.current;
     if (!elm) return;
     const obs = new ResizeObserver((entries) => setWidth(entries[0].contentRect.width));
     obs.observe(elm);
 
     return () => obs.disconnect();
-  }, [elm]);
+  }, [ref.current]);
   return (
     <div style={style} ref={ref} className={`${nowrap} ${className}`}>
       {text}
