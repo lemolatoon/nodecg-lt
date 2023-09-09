@@ -20,7 +20,7 @@ export const AutoResizeText = ({ className, text, style }: Props) => {
       scrollWidth: elm.scrollWidth,
       clientWidth: elm.clientWidth,
     });
-    const fontSize = `min(${(width / stringWidth(text)) * 1.7}px, 55px)`;
+    const fontSize = `min(${(width / stringWidth(text)) * 2 - 2}px, 55px)`;
     console.log({ fontSize });
     elm.style.fontSize = fontSize;
   }, [text, width]);

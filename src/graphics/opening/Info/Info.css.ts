@@ -14,7 +14,6 @@ const fontCommon: Parameters<typeof style>[0] = {
   fontWeight: 'bold',
   color: 'white',
   marginRight: '8px',
-  verticalAlign: 'middle',
 };
 
 export const row = style({
@@ -29,6 +28,7 @@ export const overflowHidden = style({
 export const font = style({
   ...fontCommon,
   fontSize: '55px',
+  lineHeight: 0,
 });
 
 export const headerFont = style({
