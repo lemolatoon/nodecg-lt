@@ -6,7 +6,8 @@ import { Song } from '../Song';
 export const App = () => {
   return (
     <>
-      <img className={background} src={'./assets/background.png'} />
+      {/* <img className={background} src={'./assets/background.png'} /> */}
+      <video className={background} autoPlay loop muted playsInline src={'./assets/trains.mp4'} />
       <div className={wrapper}>
         <div className={title}>KCS Conference</div>
         <Info className={info} />
