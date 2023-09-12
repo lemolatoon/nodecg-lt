@@ -6,6 +6,7 @@ import { OpeningPageState } from '../../../types';
 import { useReplicant } from 'use-nodecg';
 import { exhaustivenessCheck } from '../../../util';
 import { MainMessageText } from '../MainMessageText';
+import '../global.css';
 
 export const App = () => {
   const [openingPageState] = useReplicant<OpeningPageState>('openingPageState', { state: 'opening' } as const, {
@@ -34,10 +35,10 @@ const Inner = ({ state }: OpeningPageState) => {
       );
       break;
     case 'thankyou':
-      return <MainMessageText text="Thank you for watching!"></MainMessageText>;
+      return <MainMessageText text="THANK YOU FOR WATCHING!"></MainMessageText>;
       break;
     case 'waiting':
-      return <MainMessageText text="Please wait for starting stream..."></MainMessageText>;
+      return <MainMessageText text="PLEASE WAIT FOR STREAMING..."></MainMessageText>;
       break;
     default:
       exhaustivenessCheck(state);

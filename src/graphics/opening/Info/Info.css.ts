@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { stdFontFamily } from '../global.css';
 
 export const wrapper = style({
   padding: '16px',
@@ -8,6 +9,7 @@ export const wrapper = style({
   display: 'grid',
   gridTemplateColumns: '30% 40px calc(100% - 30% - 40px)',
   overflow: 'hidden',
+  ...stdFontFamily,
 });
 
 const fontCommon: Parameters<typeof style>[0] = {

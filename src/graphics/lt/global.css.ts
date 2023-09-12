@@ -6,6 +6,10 @@ globalStyle('*', {
   boxSizing: 'border-box',
 });
 
+globalStyle('*', {
+  fontFamily: 'Bahnschrift',
+});
+
 globalStyle('#app', {
   height: '100vh',
 });

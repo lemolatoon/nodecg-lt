@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { stdFontFamily } from '../global.css';
 
 export const wrapper = style({
   // position
@@ -12,9 +13,9 @@ export const wrapper = style({
   justifyContent: 'center',
 
   // font
-  fontFamily: '',
   color: 'white',
   fontSize: '100px',
+  ...stdFontFamily,
 
   // background
   backgroundColor: 'rgba(0, 0, 0, 0.15)',

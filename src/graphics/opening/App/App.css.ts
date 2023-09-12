@@ -1,4 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css';
+import { stdFontFamily } from '../global.css';
 
 globalStyle('*', {
   margin: 0,
@@ -29,6 +30,7 @@ export const title = style({
   color: 'white',
   fontSize: '150px',
   fontWeight: 'bold',
+  ...stdFontFamily,
 });
 
 export const info = style({
