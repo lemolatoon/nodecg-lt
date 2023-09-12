@@ -1,0 +1,1 @@
+export { MainMessageText } from './MainMessageText';

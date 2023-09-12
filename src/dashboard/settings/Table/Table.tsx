@@ -9,7 +9,10 @@ import { MemberInfo } from '../../../types';
 type FormInput = {
   members: File[];
 };
-export const Table = () => {
+type Props = {
+  className?: string;
+};
+export const Table = (props: Props) => {
   const [memberInfos, setMemberInfos] = useReplicant<MemberInfo[]>('members', [], { defaultValue: [] });
   const [memberIndex, setMemberIndex] = useReplicant<number>('memberIndex', 0, { defaultValue: 0 });
   const form = useForm<FormInput>();
@@ -37,6 +40,7 @@ export const Table = () => {
   return (
     <>
       <TableLayout
+        {...props}
         form={form}
         onSubmit={onSubmit}
         memberInfos={memberInfos}
@@ -53,8 +57,8 @@ type TableLayoutProps = {
   memberInfos?: MemberInfo[];
   memberIndex: number;
   onClickMember: (index: number) => void;
-};
-const TableLayout = ({ form, onSubmit, memberInfos, memberIndex, onClickMember }: TableLayoutProps) => {
+} & Props;
+const TableLayout = ({ className, form, onSubmit, memberInfos, memberIndex, onClickMember }: TableLayoutProps) => {
   const {
     register,
     handleSubmit,
@@ -62,7 +66,7 @@ const TableLayout = ({ form, onSubmit, memberInfos, memberIndex, onClickMember }
   } = form;
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={className}>
         <input type="file" {...register('members')} />
         <button type="submit">反映</button>
         {memberInfos ? (
