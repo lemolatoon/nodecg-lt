@@ -35,7 +35,7 @@ export const title = style({
 
 export const info = style({
   alignSelf: 'flex-start',
-  width: '75%',
+  width: '100%',
 });
 
 export const song = style({
