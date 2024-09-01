@@ -1,21 +1,27 @@
-import React from 'react';
-import { bar, mainText, textHeader, textsWrapper, wrapper } from './BottomBox.css';
-import { useReplicant } from 'use-nodecg';
-import { MemberInfo } from '../../../types';
+import React from "react";
+import {
+  bar,
+  mainText,
+  textHeader,
+  textsWrapper,
+  wrapper,
+} from "./BottomBox.css";
+import { useReplicant } from "use-nodecg";
+import { MemberInfo } from "../../../types";
 
 type Props = {
   horizontalRatio: number;
 };
 export const BottomBox = ({ horizontalRatio }: Props) => {
-  const [membersInfos] = useReplicant<MemberInfo[]>('members', []);
-  const [memberIndex] = useReplicant<number>('memberIndex', 0);
+  const [membersInfos] = useReplicant<MemberInfo[]>("members", []);
+  const [memberIndex] = useReplicant<number>("memberIndex", 0);
   const memberInfo = membersInfos[memberIndex];
 
   const style = {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     right: 0,
-    width: '100%',
+    width: "100%",
     height: `${100 - horizontalRatio * 100}%`,
   } as const;
   return (
@@ -29,8 +35,8 @@ type BottomBoxLayoutProps = {
   memberInfo?: MemberInfo;
 };
 const BottomBoxLayout = ({ memberInfo }: BottomBoxLayoutProps) => {
-  const speaker = memberInfo?.speaker ?? '';
-  const title = memberInfo?.title ?? '';
+  const speaker = memberInfo?.speaker ?? "";
+  const title = memberInfo?.title ?? "";
   return (
     <div className={wrapper}>
       <div className={textsWrapper}>

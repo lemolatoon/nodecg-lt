@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
+import { style } from "@vanilla-extract/css";
 
 export const margin16 = style({
-  margin: '16px',
+  margin: "16px",
 });

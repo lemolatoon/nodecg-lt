@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "yarn webpack serve",
-    "watch": "yarn webpack watch",
-    "build": "yarn webpack build",
-    "fmt:nowrite": "yarn prettier '**/*.{json,ts,tsx}'",
-    "fmt": "yarn fmt:nowrite --write",
+    "dev": "npx webpack serve",
+    "watch": "npx webpack watch",
+    "build": "npx webpack build",
+    "fmt:nowrite": "npx prettier '**/*.{json,ts,tsx}'",
+    "fmt": "npx prettier '**/*.{json,ts,tsx}' --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/lemolatoon/nodecg-lt#readme",
   "engines": {
-    "node": "18.14.0"
+    "node": "20.16.0"
   },
   "nodecg": {
     "compatibleRange": "^2.0.0",

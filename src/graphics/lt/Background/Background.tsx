@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { background, canvas } from './Background.css';
-import { multiply } from '../util/canvas';
+import React, { useEffect } from "react";
+import { background, canvas } from "./Background.css";
+import { multiply } from "../util/canvas";
 
 type Props = {
   verticalRatio: number;
@@ -15,7 +15,7 @@ export const Background = ({ verticalRatio, horizontalRatio }: Props) => {
     console.log(canvas);
     console.log(canvas?.toDataURL());
     if (canvas) {
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       if (ctx) {
         const image = imgRef.current;
         if (!image) {
@@ -25,12 +25,21 @@ export const Background = ({ verticalRatio, horizontalRatio }: Props) => {
           return;
         }
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-        const multipliedBottomColor: [number, number, number, number] = [0x50, 0x5c, 0xa5, 0xff];
-        const multipliedLeftColor: [number, number, number, number] = [0x7c, 0x8d, 0xff, 0xff];
+        const multipliedBottomColor: [number, number, number, number] = [
+          0x50, 0x5c, 0xa5, 0xff,
+        ];
+        const multipliedLeftColor: [number, number, number, number] = [
+          0x7c, 0x8d, 0xff, 0xff,
+        ];
         multiply(ctx, multipliedBottomColor, canvas.width, canvas.height);
 
         // Clear the reactangle for displaying lt itself
-        ctx.clearRect(canvas.width * verticalRatio, 0, canvas.width, canvas.height * horizontalRatio);
+        ctx.clearRect(
+          canvas.width * verticalRatio,
+          0,
+          canvas.width,
+          canvas.height * horizontalRatio,
+        );
       }
     }
   }, [ref.current, loaded]);

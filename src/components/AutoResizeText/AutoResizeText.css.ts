@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { style } from "@vanilla-extract/css";
 
 export const nowrap = style({
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
+  whiteSpace: "nowrap",
+  overflow: "hidden",
 });

@@ -1,15 +1,15 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle } from "@vanilla-extract/css";
 
-globalStyle('*', {
+globalStyle("*", {
   margin: 0,
   padding: 0,
-  boxSizing: 'border-box',
+  boxSizing: "border-box",
 });
 
-globalStyle('*', {
-  fontFamily: 'Bahnschrift',
+globalStyle("*", {
+  fontFamily: "Bahnschrift",
 });
 
-globalStyle('#app', {
-  height: '100vh',
+globalStyle("#app", {
+  height: "100vh",
 });

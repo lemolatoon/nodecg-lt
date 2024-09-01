@@ -1,44 +1,44 @@
-import { globalStyle, style } from '@vanilla-extract/css';
-import { stdFontFamily } from '../global.css';
+import { globalStyle, style } from "@vanilla-extract/css";
+import { stdFontFamily } from "../global.css";
 
-globalStyle('*', {
+globalStyle("*", {
   margin: 0,
   padding: 0,
-  boxSizing: 'border-box',
+  boxSizing: "border-box",
 });
-globalStyle('#app', {
-  height: '100vh',
+globalStyle("#app", {
+  height: "100vh",
 });
 
 export const background = style({
-  position: 'absolute',
+  position: "absolute",
   zIndex: -1,
-  width: '100vw',
-  height: '100vh',
-  filter: 'saturate(1.5) blur(2px)',
+  width: "100vw",
+  height: "100vh",
+  filter: "saturate(1.5) blur(2px)",
 });
 
 export const wrapper = style({
-  display: 'flex',
-  height: '100vh',
-  width: '100vw',
-  flexDirection: 'column',
-  alignItems: 'center',
+  display: "flex",
+  height: "100vh",
+  width: "100vw",
+  flexDirection: "column",
+  alignItems: "center",
 });
 
 export const title = style({
-  color: 'white',
-  fontSize: '150px',
-  fontWeight: 'bold',
+  color: "white",
+  fontSize: "150px",
+  fontWeight: "bold",
   ...stdFontFamily,
 });
 
 export const info = style({
-  alignSelf: 'flex-start',
-  width: '100%',
+  alignSelf: "flex-start",
+  width: "100%",
 });
 
 export const song = style({
-  marginTop: 'auto',
-  marginBottom: '64px',
+  marginTop: "auto",
+  marginBottom: "64px",
 });

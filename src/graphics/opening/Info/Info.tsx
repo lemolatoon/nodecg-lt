@@ -1,15 +1,22 @@
-import React from 'react';
-import { bar, font, headerFont, overflowHidden, row, wrapper } from './Info.css';
-import { MemberInfo } from '../../../types';
-import { useReplicant } from 'use-nodecg';
-import { AutoResizeText } from '../../../components/AutoResizeText';
+import React from "react";
+import {
+  bar,
+  font,
+  headerFont,
+  overflowHidden,
+  row,
+  wrapper,
+} from "./Info.css";
+import { MemberInfo } from "../../../types";
+import { useReplicant } from "use-nodecg";
+import { AutoResizeText } from "../../../components/AutoResizeText";
 
 type Props = {
   className?: string;
 };
 export const Info = ({ className }: Props) => {
-  const [membersInfos] = useReplicant<MemberInfo[]>('members', []);
-  const [memberIndex] = useReplicant<number>('memberIndex', 0);
+  const [membersInfos] = useReplicant<MemberInfo[]>("members", []);
+  const [memberIndex] = useReplicant<number>("memberIndex", 0);
 
   const nextThreeMemberInfos = membersInfos.slice(memberIndex, memberIndex + 3);
 
@@ -20,7 +27,7 @@ type InfoLayoutProps = {
   className?: string;
   infos: MemberInfo[];
 };
-const rowHeight = '125px';
+const rowHeight = "125px";
 // const rowHeight = 'auto';
 const InfoLayout = ({ className, infos }: InfoLayoutProps) => {
   return (

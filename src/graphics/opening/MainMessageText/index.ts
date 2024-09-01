@@ -1,1 +1,1 @@
-export { MainMessageText } from './MainMessageText';
+export { MainMessageText } from "./MainMessageText";

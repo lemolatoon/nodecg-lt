@@ -1,5 +1,5 @@
-import React from 'react';
-import { centerize, wrapper } from './MainMessageText.css';
+import React from "react";
+import { centerize, wrapper } from "./MainMessageText.css";
 
 type Props = {
   className?: string;

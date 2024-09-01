@@ -1,8 +1,8 @@
-import { fontFace, style } from '@vanilla-extract/css';
+import { fontFace, style } from "@vanilla-extract/css";
 
 export const wrapper = style({
-  backgroundColor: 'rgba(118, 187, 180, 0.6)',
-  height: '60px',
+  backgroundColor: "rgba(118, 187, 180, 0.6)",
+  height: "60px",
 });
 
 const gothic16 = fontFace({
@@ -10,7 +10,7 @@ const gothic16 = fontFace({
 });
 
 export const songName = style({
-  color: 'white',
-  fontSize: '40px',
+  color: "white",
+  fontSize: "40px",
   fontFamily: gothic16,
 });

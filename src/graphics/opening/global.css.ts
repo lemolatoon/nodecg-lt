@@ -1,3 +1,3 @@
 export const stdFontFamily = {
-  fontFamily: 'Bahnschrift',
+  fontFamily: "Bahnschrift",
 };

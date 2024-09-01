@@ -1,6 +1,6 @@
-import React, { useEffect, useLayoutEffect } from 'react';
-import { nowrap } from './AutoResizeText.css';
-import stringWidth from 'string-width';
+import React, { useEffect, useLayoutEffect } from "react";
+import { nowrap } from "./AutoResizeText.css";
+import stringWidth from "string-width";
 
 type Props = {
   className?: string;
@@ -21,7 +21,9 @@ export const AutoResizeText = ({ className, text, style }: Props) => {
   useLayoutEffect(() => {
     const elm = ref.current;
     if (!elm) return;
-    const obs = new ResizeObserver((entries) => setWidth(entries[0].contentRect.width));
+    const obs = new ResizeObserver((entries) =>
+      setWidth(entries[0].contentRect.width),
+    );
     obs.observe(elm);
 
     return () => obs.disconnect();

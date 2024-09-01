@@ -1,1 +1,1 @@
-export { AutoResizeText } from './AutoResizeText';
+export { AutoResizeText } from "./AutoResizeText";

@@ -1,20 +1,20 @@
-import { style } from '@vanilla-extract/css';
+import { style } from "@vanilla-extract/css";
 
 export const background = style({
-  position: 'absolute',
-  display: 'none',
+  position: "absolute",
+  display: "none",
   zIndex: -1,
-  height: '100vh',
-  width: '100vw',
+  height: "100vh",
+  width: "100vw",
 });
 
 export const canvas = style({
-  position: 'absolute',
+  position: "absolute",
   zIndex: -1,
 
-  filter: 'saturate(1.5)',
+  filter: "saturate(1.5)",
 });
 
 export const filterImg = {
-  filter: 'saturate(0.5) brightness(0.5)',
+  filter: "saturate(0.5) brightness(0.5)",
 };
